@@ -107,7 +107,7 @@ void FixVelocity(Player* player, LagRecord* record, LagRecord* previous, float m
 		if (!(previous->m_flags & FL_ONGROUND || record->m_flags & FL_ONGROUND))
 		{
 			bool currently_ducking = (record->m_flags & FL_DUCKING) != 0;
-			if (previous->m_flags & FL_DUCKING != currently_ducking)
+				if (previous->m_flags && FL_DUCKING != currently_ducking)
 			{
 				float duck_modifier = currently_ducking ? 9.f : -9.f;
 				origin_delta.z -= duck_modifier;
